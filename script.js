@@ -6,8 +6,7 @@ const ozOutput = document.getElementById("ozOutput");
 
 //eventlistener
 
-input.addEventListener("keyup", inputPounds);
-input.addEventListener("change", inputPounds);
+input.addEventListener("input", inputPounds);
 
 //functions
 
@@ -16,4 +15,7 @@ function inputPounds() {
   gramsOutput.innerHTML = input.value * 453.592;
   kgOutput.innerHTML = input.value * 0.453592;
   ozOutput.innerHTML = input.value * 16;
+  if (input.value === "") {
+    output.classList.add("hidden");
+  }
 }
